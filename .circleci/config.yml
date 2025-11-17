@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  architect: giantswarm/architect@4.35.5
+  architect: giantswarm/architect@6.8.0
 
 
 workflows:
@@ -9,7 +9,7 @@ workflows:
     - architect/go-build:
         context: architect
         name: go-build
-        binary: opsgenie-shift-reporter
+        binary: oncall-shift-reporter
         filters:
           tags:
             only: /^v.*/
@@ -27,6 +27,7 @@ workflows:
             ignore:
             - main
             - master
+
     - architect/push-to-app-catalog:
         context: architect
         requires:
@@ -35,7 +36,7 @@ workflows:
         executor: app-build-suite
         app_catalog: giantswarm-operations-platform-catalog
         app_catalog_test: giantswarm-operations-platform-test-catalog
-        chart: opsgenie-shift-reporter
+        chart: oncall-shift-reporter
         filters:
           tags:
             only: /^v.*/

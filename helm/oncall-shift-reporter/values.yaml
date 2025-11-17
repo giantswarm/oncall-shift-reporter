@@ -1,12 +1,12 @@
 image:
   registry: gsoci.azurecr.io
-  name: giantswarm/opsgenie-shift-reporter
+  name: giantswarm/oncall-shift-reporter
 
 slack:
   key: ""
 
-opsgenie:
-  key: ""
+pagerduty:
+  auth_token: ""
 
 global:
   podSecurityStandards:
