@@ -26,10 +26,10 @@
                 }
             }
         },
-        "opsgenie": {
+        "pagerduty": {
             "type": "object",
             "properties": {
-                "key": {
+                "auth_token": {
                     "type": "string"
                 }
             }

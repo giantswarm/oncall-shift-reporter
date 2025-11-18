@@ -1,2 +1,2 @@
-# opsgenie-shift-reporter
-Report numbers of shifts from Opsgenie
+# oncall-shift-reporter
+Report numbers of oncall shifts.

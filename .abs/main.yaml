@@ -1,4 +1,4 @@
 replace-chart-version-with-git: true
 generate-metadata: true
-chart-dir: helm/opsgenie-shift-reporter
+chart-dir: helm/oncall-shift-reporter
 destination: ./build

@@ -1,8 +1,8 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: opsgenie-shift-reporter
-  namespace: opsgenie-shift-reporter
+  name: oncall-shift-reporter
+  namespace: oncall-shift-reporter
 spec:
   concurrencyPolicy: Allow
   failedJobsHistoryLimit: 1
@@ -12,22 +12,22 @@ spec:
         spec:
           containers:
           - args:
-            - -opsgenie-key=$(opsgenie-key)
+            - -pagerduty-auth-token=$(pagerduty-auth-token)
             - -slack-key=$(slack-key)
             env:
-            - name: opsgenie-key
+            - name: pagerduty-auth-token
               valueFrom:
                 secretKeyRef:
-                  key: OPSGENIE_KEY
-                  name: opsgenie-shift-reporter
+                  key: PAGERDUTY_AUTH_TOKEN
+                  name: oncall-shift-reporter
             - name: slack-key
               valueFrom:
                 secretKeyRef:
                   key: SLACK_KEY
-                  name: opsgenie-shift-reporter
+                  name: oncall-shift-reporter
             image: "{{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag | default .Chart.Version }}"
             imagePullPolicy: Always
-            name: opsgenie-shift-reporter
+            name: oncall-shift-reporter
             resources:
               limits:
                 cpu: 200m
