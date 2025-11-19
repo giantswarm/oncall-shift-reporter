@@ -3,6 +3,6 @@ description: A Helm chart for oncall-shift-reporter
 home: https://github.com/giantswarm/oncall-shift-reporter
 icon: https://s.giantswarm.io/app-icons/prometheus/1/light.svg
 name: oncall-shift-reporter
-version: 0.1.1
+version: 1.0.0
 annotations:
   application.giantswarm.io/team: "planeteers"
