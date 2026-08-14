@@ -4,5 +4,6 @@ home: https://github.com/giantswarm/oncall-shift-reporter
 icon: https://s.giantswarm.io/app-icons/prometheus/1/light.svg
 name: oncall-shift-reporter
 version: 1.0.0
+appVersion: 1.0.0
 annotations:
-  application.giantswarm.io/team: "planeteers"
+  io.giantswarm.application.team: "planeteers"
