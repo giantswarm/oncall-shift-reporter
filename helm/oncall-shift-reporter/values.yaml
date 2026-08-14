@@ -1,6 +1,7 @@
 image:
   registry: gsoci.azurecr.io
   name: giantswarm/oncall-shift-reporter
+  tag: ""
 
 slack:
   key: ""

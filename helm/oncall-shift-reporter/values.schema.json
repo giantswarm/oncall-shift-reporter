@@ -23,6 +23,9 @@
                 },
                 "registry": {
                     "type": "string"
+                },
+                "tag": {
+                  "type": "string"
                 }
             }
         },
