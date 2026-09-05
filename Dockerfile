@@ -1,7 +1,13 @@
 FROM alpine:3.24
 
- RUN apk update && apk --no-cache add ca-certificates && \
+RUN apk update && apk --no-cache add ca-certificates && \
   update-ca-certificates
 
- ADD ./oncall-shift-reporter /usr/local/bin/oncall-shift-reporter
+# architect/go-build emits one static binary per target platform
+# (oncall-shift-reporter-linux-amd64, -linux-arm64) plus an unsuffixed copy of
+# the linux/amd64 build. Copy the one matching buildx's TARGETARCH so the arm64
+# image gets an arm64 binary. For a local build, produce it first:
+#   CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o oncall-shift-reporter-linux-amd64 .
+ARG TARGETARCH
+COPY ./oncall-shift-reporter-linux-${TARGETARCH} /usr/local/bin/oncall-shift-reporter
 ENTRYPOINT ["/usr/local/bin/oncall-shift-reporter"]

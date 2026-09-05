@@ -1,0 +1,11 @@
+# Values for the app-test-suite smoke (tests/ats/test_smoke.py) on the bare kind cluster
+# the generated execute-chart-tests job creates. Layered over the chart defaults, see
+# .ats/main.yaml (app-tests-app-config-file).
+#
+# The chart writes these straight into the Secret's `data:` (already base64), so the
+# smoke passes base64 strings ("smoke"). The CronJob does not run during the smoke, so
+# the tokens are never used and no image is pulled.
+pagerduty:
+  auth_token: c21va2U=
+slack:
+  key: c21va2U=
