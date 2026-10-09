@@ -20,4 +20,4 @@ require (
 // compiled into the binary; the replace only raises the version nancy scans.
 replace golang.org/x/crypto => golang.org/x/crypto v0.57.0
 
-replace golang.org/x/sys => golang.org/x/sys v0.48.0
+replace golang.org/x/sys => golang.org/x/sys v0.49.0
